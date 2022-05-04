@@ -11,3 +11,5 @@ The "choices" are discrete parameters since they are either 0 or 1. To train the
 We can see from the results that the probability array resembles a lung. Along the edge, the network tends to quantize on one side and doesn't quantize on the other side. In this way, the contarst will be improved, which leads to better performance.
 
 The result can help guide the design of a adaptable quantizer in CT scanners. We can get images with higher contrast in important areas while reduce the storage room for images.
+
+The project is done with Libo Zhang, Sihan Lyu and Sizhe Kuang.
