@@ -8,6 +8,8 @@ X_q = floor(X/2^k) * 2^k
 
 The "choices" are discrete parameters since they are either 0 or 1. To train the neural network, we must replace them with continuous ones. To this end, we sample the "choices" from a Bernoulli distribution. Then, the trainable parameters become the probability array(self.W) of the Bernoulli distribution. With a higher probability, it tends to quantize the corresponding pixel more likely.
 
+We want to control the number of pixels quantized. The reasonable way is to set constraints on the L1 norm of the probabilities. The reason is that we sample from a Bernoulli distribution and its expectation is the probability.
+
 We can see from the results that the probability array resembles a lung. Along the edge, the network tends to quantize on one side and doesn't quantize on the other side. In this way, the contarst will be improved, which leads to better performance.
 
 The result can help guide the design of a adaptable quantizer in CT scanners. We can get images with higher contrast in important areas while reduce the storage room for images.
